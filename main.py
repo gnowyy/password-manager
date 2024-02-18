@@ -60,6 +60,11 @@ if save=="Y":
 elif save=="N":
     print(f"record have not been saved")
     sleep(1)
+    print("it will automatic save for secure")
+    with open('recent.json','w') as f:    #把這輪的dict寫進json檔 讓read_json可以讀取
+        json.dump(y,f)
+    detail_store=y
+    saved=True
     print(f"program will be exit in 10 sec")
     for i in range(1,11):
         print(i)
